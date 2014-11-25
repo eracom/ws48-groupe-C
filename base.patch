@@ -1,0 +1,352 @@
+From 3639bd88a70920d7cc546d4f23f43131441162fe Mon Sep 17 00:00:00 2001
+From: Yann Gouffon <yago@yago-art.ch>
+Date: Tue, 25 Nov 2014 07:37:28 +0100
+Subject: [PATCH] update base files
+
+---
+ assets/README.md                     |  6 ++-
+ assets/img/.gitkeep                  |  0
+ assets/pages/index.twig              |  7 ++++
+ assets/pages/layout.twig             | 20 +++++++++
+ assets/sass/bootstrap-variables.scss | 80 +++++++++++++++++++-----------------
+ bower.json                           |  2 +-
+ gulpfile.js                          | 19 ++++++++-
+ package.json                         |  1 +
+ 8 files changed, 93 insertions(+), 42 deletions(-)
+ create mode 100644 assets/img/.gitkeep
+ create mode 100644 assets/pages/index.twig
+ create mode 100644 assets/pages/layout.twig
+
+diff --git a/assets/README.md b/assets/README.md
+index e1b669e..a5467c2 100755
+--- a/assets/README.md
++++ b/assets/README.md
+@@ -1,6 +1,10 @@
+ # handicap Styleguide
+ 
+-This is my new awesome styleguide generated with [Antistatique](http://www.antistatique.net)'s [styleguide-generator](https://github.com/tonifisler/generator-styleguide)! 
++This is my new awesome styleguide generated with [Antistatique](http://www.antistatique.net)'s [styleguide-generator](https://github.com/tonifisler/generator-styleguide)!
++
++```none_example
++<a href="pages/index.html" class="btn btn-primary">Static example pages</a>
++```
+ 
+ **<3 Yeoman + Gulp + Hologram**
+ 
+diff --git a/assets/img/.gitkeep b/assets/img/.gitkeep
+new file mode 100644
+index 0000000..e69de29
+diff --git a/assets/pages/index.twig b/assets/pages/index.twig
+new file mode 100644
+index 0000000..25b7504
+--- /dev/null
++++ b/assets/pages/index.twig
+@@ -0,0 +1,7 @@
++{% extends "layout.twig" %}
++
++{% block pagetitle %}Homepage{% endblock %}
++
++{% block page %}
++  <h1>Welcome on homepage !</h1>
++{% endblock %}
+\ No newline at end of file
+diff --git a/assets/pages/layout.twig b/assets/pages/layout.twig
+new file mode 100644
+index 0000000..5050f4d
+--- /dev/null
++++ b/assets/pages/layout.twig
+@@ -0,0 +1,20 @@
++<!DOCTYPE html>
++<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
++<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
++<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
++<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
++    <head>
++        <meta charset="utf-8">
++        <meta http-equiv="X-UA-Compatible" content="IE=edge">
++        <title>{% block pagetitle %}{% endblock %}</title>
++        <meta name="description" content="">
++        <meta name="viewport" content="width=device-width, initial-scale=1">
++
++        <link rel="stylesheet" href="../css/stylesheet.css">
++    </head>
++    <body>
++        {% block page %}{% endblock %}
++        <script src="../js/vendors.min.js"></script>
++        <script src="../js/main.min.js"></script>
++    </body>
++</html>
+\ No newline at end of file
+diff --git a/assets/sass/bootstrap-variables.scss b/assets/sass/bootstrap-variables.scss
+index fa8b96b..7d190f2 100755
+--- a/assets/sass/bootstrap-variables.scss
++++ b/assets/sass/bootstrap-variables.scss
+@@ -1,11 +1,8 @@
+-@charset "UTF-8";
+-
+-// Copyright (c) 2013 Twitter, Inc
+-// License MIT
+-// a flag to toggle asset pipeline / compass integration
+-// defaults to true if twbs-font-path function is present (no function => twbs-font-path('') parsed as string == right side)
+-// in Sass 3.3 this can be improved with: function-exists(twbs-font-path)
++// When true, asset path helpers are used, otherwise the regular CSS `url()` is used.
++// When there no function is defined, `fn('')` is parsed as string that equals the right hand side
++// NB: in Sass 3.3 there is a native function: function-exists(twbs-font-path)
+ $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")')) !default;
++
+ //
+ // Variables
+ // --------------------------------------------------
+@@ -15,13 +12,14 @@ $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")
+ //
+ //## Gray and brand colors for use across Bootstrap.
+ 
+-$gray-darker:            lighten(#000, 13.5%) !default; // #222
+-$gray-dark:              lighten(#000, 20%) !default;   // #333
+-$gray:                   lighten(#000, 33.5%) !default; // #555
+-$gray-light:             lighten(#000, 60%) !default;   // #999
+-$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
++$gray-base:              #000 !default;
++$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
++$gray-dark:              lighten($gray-base, 20%) !default;   // #333
++$gray:                   lighten($gray-base, 33.5%) !default; // #555
++$gray-light:             lighten($gray-base, 46.7%) !default; // #777
++$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+ 
+-$brand-primary:         #428bca !default;
++$brand-primary:         darken(#428bca, 6.5%) !default;
+ $brand-success:         #5cb85c !default;
+ $brand-info:            #5bc0de !default;
+ $brand-warning:         #f0ad4e !default;
+@@ -41,6 +39,8 @@ $text-color:            $gray-dark !default;
+ $link-color:            $brand-primary !default;
+ //** Link hover color set via `darken()` function.
+ $link-hover-color:      darken($link-color, 15%) !default;
++//** Link hover decoration.
++$link-hover-decoration: underline !default;
+ 
+ 
+ //== Typography
+@@ -81,7 +81,10 @@ $headings-color:          inherit !default;
+ //## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+ 
+ //** Load fonts from this directory.
+-$icon-font-path: "../fonts/" !default;
++
++// [converter] Asset helpers such as Sprockets and Node.js Mincer do not resolve relative paths
++$icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
++
+ //** File name for all font files.
+ $icon-font-name:          "glyphicons-halflings-regular" !default;
+ //** Element ID within SVG icon file.
+@@ -189,13 +192,20 @@ $input-bg-disabled:              $gray-lighter !default;
+ $input-color:                    $gray !default;
+ //** `<input>` border color
+ $input-border:                   #ccc !default;
+-//** `<input>` border radius
++
++// TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
++//** Default `.form-control` border radius
+ $input-border-radius:            $border-radius-base !default;
++//** Large `.form-control` border radius
++$input-border-radius-large:      $border-radius-large !default;
++//** Small `.form-control` border radius
++$input-border-radius-small:      $border-radius-small !default;
++
+ //** Border color for inputs on focus
+ $input-border-focus:             #66afe9 !default;
+ 
+ //** Placeholder text color
+-$input-color-placeholder:        $gray-light !default;
++$input-color-placeholder:        #999 !default;
+ 
+ //** Default `.form-control` height
+ $input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+@@ -212,6 +222,9 @@ $input-group-addon-bg:           $gray-lighter !default;
+ //** Border color for textual input addons
+ $input-group-addon-border-color: $input-border !default;
+ 
++//** Disabled cursor for form controls and buttons.
++$cursor-disabled:                not-allowed !default;
++
+ 
+ //== Dropdowns
+ //
+@@ -260,8 +273,7 @@ $zindex-dropdown:          1000 !default;
+ $zindex-popover:           1060 !default;
+ $zindex-tooltip:           1070 !default;
+ $zindex-navbar-fixed:      1030 !default;
+-$zindex-modal-background:  1040 !default;
+-$zindex-modal:             1050 !default;
++$zindex-modal:             1040 !default;
+ 
+ 
+ //== Media queries breakpoints
+@@ -323,17 +335,17 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+ //## Define the maximum width of `.container` for different screen sizes.
+ 
+ // Small screen / tablet
+-$container-tablet:             ((720px + $grid-gutter-width)) !default;
++$container-tablet:             (720px + $grid-gutter-width) !default;
+ //** For `$screen-sm-min` and up.
+ $container-sm:                 $container-tablet !default;
+ 
+ // Medium screen / desktop
+-$container-desktop:            ((940px + $grid-gutter-width)) !default;
++$container-desktop:            (940px + $grid-gutter-width) !default;
+ //** For `$screen-md-min` and up.
+ $container-md:                 $container-desktop !default;
+ 
+ // Large screen / wide desktop
+-$container-large-desktop:      ((1140px + $grid-gutter-width)) !default;
++$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+ //** For `$screen-lg-min` and up.
+ $container-lg:                 $container-large-desktop !default;
+ 
+@@ -376,12 +388,12 @@ $navbar-default-toggle-border-color:       #ddd !default;
+ 
+ // Inverted navbar
+ // Reset inverted navbar basics
+-$navbar-inverse-color:                      $gray-light !default;
++$navbar-inverse-color:                      lighten($gray-light, 15%) !default;
+ $navbar-inverse-bg:                         #222 !default;
+ $navbar-inverse-border:                     darken($navbar-inverse-bg, 10%) !default;
+ 
+ // Inverted navbar links
+-$navbar-inverse-link-color:                 $gray-light !default;
++$navbar-inverse-link-color:                 lighten($gray-light, 15%) !default;
+ $navbar-inverse-link-hover-color:           #fff !default;
+ $navbar-inverse-link-hover-bg:              transparent !default;
+ $navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color !default;
+@@ -411,8 +423,6 @@ $nav-link-hover-bg:                         $gray-lighter !default;
+ $nav-disabled-link-color:                   $gray-light !default;
+ $nav-disabled-link-hover-color:             $gray-light !default;
+ 
+-$nav-open-link-hover-color:                 #fff !default;
+-
+ //== Tabs
+ $nav-tabs-border-color:                     #ddd !default;
+ 
+@@ -537,7 +547,7 @@ $popover-title-bg:                    darken($popover-bg, 3%) !default;
+ //** Popover arrow width
+ $popover-arrow-width:                 10px !default;
+ //** Popover arrow color
+-$popover-arrow-color:                 #fff !default;
++$popover-arrow-color:                 $popover-bg !default;
+ 
+ //** Popover outer arrow width
+ $popover-arrow-outer-width:           ($popover-arrow-width + 1) !default;
+@@ -636,6 +646,8 @@ $alert-danger-border:         $state-danger-border !default;
+ $progress-bg:                 #f5f5f5 !default;
+ //** Progress bar text color
+ $progress-bar-color:          #fff !default;
++//** Variable for setting rounded corners on progress bar.
++$progress-border-radius:      $border-radius-base !default;
+ 
+ //** Default progress bar color
+ $progress-bar-bg:             $brand-primary !default;
+@@ -830,6 +842,8 @@ $pre-scrollable-max-height:   340px !default;
+ //
+ //##
+ 
++//** Horizontal offset for forms and lists.
++$component-offset-horizontal: 180px !default;
+ //** Text muted color
+ $text-muted:                  $gray-light !default;
+ //** Abbreviations and acronyms border color
+@@ -844,17 +858,7 @@ $blockquote-font-size:        ($font-size-base * 1.25) !default;
+ $blockquote-border-color:     $gray-lighter !default;
+ //** Page header border color
+ $page-header-border-color:    $gray-lighter !default;
+-
+-
+-//== Miscellaneous
+-//
+-//##
+-
++//** Width of horizontal description list titles
++$dl-horizontal-offset:        $component-offset-horizontal !default;
+ //** Horizontal line color.
+ $hr-border:                   $gray-lighter !default;
+-
+-//** Horizontal offset for forms and lists.
+-$component-offset-horizontal: 180px !default;
+-
+-//** Width of horizontal description list titles
+-$dl-horizontal-offset:        $component-offset-horizontal !default;
+\ No newline at end of file
+diff --git a/bower.json b/bower.json
+index 7027b7e..87a372b 100644
+--- a/bower.json
++++ b/bower.json
+@@ -4,7 +4,7 @@
+     "html5shiv": "3.7.2",
+     "respond": "1.4.2",
+     "Cortana": "~1.2.7",
+-    "bootstrap-sass-official": "v3.2.0+1",
++    "bootstrap-sass-official": "v3.3.1",
+     "jquery": "~2.1.1"
+   }
+ }
+diff --git a/gulpfile.js b/gulpfile.js
+index ead8e02..0768e51 100644
+--- a/gulpfile.js
++++ b/gulpfile.js
+@@ -75,6 +75,16 @@ gulp.task('vendors', function() {
+ });
+ 
+ /**
++ * Compile TWIG example pages
++ */
++
++gulp.task('twig', function () {
++    return gulp.src('assets/pages/*.twig')
++        .pipe($.twig())
++        .pipe(gulp.dest('styleguide/pages'));
++});
++
++/**
+  * Build styles from SCSS files
+  * With error reporting on compiling (so that there's no crash)
+  */
+@@ -125,7 +135,7 @@ gulp.task('clean', del.bind(null, ['build', 'styleguide']));
+ /**
+  * Serve
+  */
+-gulp.task('serve', ['styles', 'scripts'], function () {
++gulp.task('serve', ['styles', 'scripts', 'twig'], function () {
+   browserSync({
+     server: {
+       baseDir: ['styleguide'],
+@@ -139,6 +149,11 @@ gulp.task('serve', ['styles', 'scripts'], function () {
+   gulp.watch(['assets/js/**/*.js'], function() {
+     runSequence('scripts', reload);
+   });
++  gulp.watch(['assets/pages/**/*'], function() {
++    // clean folder before compiling
++    del.bind(null, ['styleguide/pages'])
++    runSequence('twig', reload);
++  });
+ });
+ 
+ /**
+@@ -162,6 +177,6 @@ gulp.task('production',['clean'], function() {
+  * Default task
+  */
+ gulp.task('default', ['clean'], function(cb) {
+-  runSequence('vendors', 'styles', 'scripts', 'styleguide', cb);
++  runSequence('vendors', 'styles', 'scripts', 'twig', 'styleguide', cb);
+ });
+ 
+diff --git a/package.json b/package.json
+index 5377e86..62d2f01 100644
+--- a/package.json
++++ b/package.json
+@@ -18,6 +18,7 @@
+     "gulp-if": "^1.2.4",
+     "gulp-load-plugins": "^0.6.0",
+     "run-sequence": "~0.3.6",
++    "gulp-twig": "0.0.4",
+     "del": "~0.1.3",
+     "gulp-hologram": "^1.0.1",
+     "gulp-gh-pages": "^0.3.4",
