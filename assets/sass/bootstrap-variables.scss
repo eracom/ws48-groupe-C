@@ -14,9 +14,9 @@ $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")
 
 $gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
-$gray-dark:              lighten($gray-base, 20%) !default;   // #333
-$gray:                   lighten($gray-base, 33.5%) !default; // #555
-$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-dark:              #515151 !default;
+$gray:                   #868686 !default;
+$gray-light:             #dededd !default;
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
 $brand-primary:         #06BF6B !default;
@@ -24,6 +24,8 @@ $brand-success:         #5cb85c !default;
 $brand-info:            #ed3324 !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
+$red:                   #ed3324 !default;
+$green:                 #06bf6b !default;
 
 
 //== Scaffolding

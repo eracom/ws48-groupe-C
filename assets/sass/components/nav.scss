@@ -27,45 +27,6 @@ category: Components - Nav
 */
 
 
-
-/*doc
----
-title: Pills
-name: b-pills
-category: Components - Nav
----
-
-```html_example
-<ul class="nav nav-pills">
-  <li class="active"><a href="#">Home</a></li>
-  <li><a href="#">Profile</a></li>
-  <li class="disabled"><a href="#">Messages</a></li>
-</ul>
-```
-
-## Staked
-
-```html_example
-<ul class="nav nav-pills nav-stacked">
-  <li class="active"><a href="#">Home</a></li>
-  <li><a href="#">Profile</a></li>
-  <li><a href="#">Messages</a></li>
-</ul>
-```
-
-## Justified
-
-```html_example
-<ul class="nav nav-pills nav-justified">
-  <li class="active"><a href="#">Home</a></li>
-  <li><a href="#">Profile</a></li>
-  <li><a href="#">Messages</a></li>
-</ul>
-```
-*/
-
-
-
 /*doc
 ---
 title: With dropdown
@@ -75,20 +36,78 @@ category: Components - Nav
 
 ```html_example
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#">Home</a></li>
-  <li><a href="#">Help</a></li>
+  <li class="active"><a href="#">Accueil</a></li>
+  <li><a href="#">Activité</a></li>
   <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    <a class="dropdown-toggle" href="#">
       Dropdown <span class="caret"></span>
     </a>
     <ul class="dropdown-menu" role="menu">
       <li><a href="#">Action</a></li>
       <li><a href="#">Another action</a></li>
       <li><a href="#">Something else here</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Separated link</a></li>
     </ul>
   </li>
+  <li><a id="donner" href="#">Donner</a></li>
 </ul>
 ```
 */
+
+.nav {
+  text-transform:uppercase;
+}
+
+.nav a {
+  color:white;
+  background-color:$gray-dark;
+}
+
+.nav-tabs {
+  border-bottom:0;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+  color:$red;
+  border-top:2px solid $red;
+  border-left:0;
+  border-right:0;
+}
+
+.nav-tabs > li > a {
+  border-radius:0;
+  border:0;
+}
+
+.nav-tabs li a:hover {
+  color:$gray-dark;
+  background:$gray;
+  border:0;
+}
+
+#donner {
+  background-color:$green;
+}
+
+#donner:hover {
+  background-color:#1be07d;
+}
+
+.nav .open >a, .nav .open > a:focus, .nav .open > a:hover {
+  background-color:gray;
+  border:0;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+  background-color:none;
+  color:white;
+}
+
+.dropdown-menu {
+  background-color:$gray;
+  border-radius:0;
+  padding:10px 25px;
+}
+
+.dropdown-menu li a {
+  color:white;
+}
