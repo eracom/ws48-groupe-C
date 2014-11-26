@@ -58,7 +58,7 @@ category: Components - Nav
 }
 
 .nav a {
-  color:white;
+  color:$white;
   background-color:$gray-dark;
 }
 
@@ -93,13 +93,13 @@ category: Components - Nav
 }
 
 .nav .open >a, .nav .open > a:focus, .nav .open > a:hover {
-  background-color:gray;
+  background-color:$gray;
   border:0;
 }
 
 .nav > li > a:focus, .nav > li > a:hover {
   background-color:none;
-  color:white;
+  color:$white;
 }
 
 .dropdown-menu {
@@ -109,5 +109,5 @@ category: Components - Nav
 }
 
 .dropdown-menu li a {
-  color:white;
+  color:$white;
 }

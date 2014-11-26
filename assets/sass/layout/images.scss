@@ -12,11 +12,9 @@ category: Layout - Images
 ```
 */
 
-
-
 /*doc
 ---
-title: Figure
+title: Figure Video
 name: b-figure
 category: Layout - Images
 ---
@@ -24,24 +22,31 @@ category: Layout - Images
 
 ```html_example
 <figure>
-  <img src="http://lorempixel.com/700/400/cats" alt="Some cats image">
-  <figcaption>Note : Lorem ipsum dolor sit amet, consectetur adipiscing elit.</figcaption>
+<iframe width="350" height="200" src="//www.youtube.com/embed/wlCtqCIVL-4" frameborder="0" allowfullscreen></iframe>
+<figcaption>Titre : Lorem ipsum dolor sit amet, consectetur.</figcaption>
 </figure>
 ```
 */
 
+figcaption {
+  color:$gray;
+  padding-top:10px;
+}
 
 
 /*doc
 ---
-title: Images shapes
+title: Image shape gallery
 name: c-images-shape
 category: Layout - Images
 ---
 
 ```html_example
-<img src="http://lorempixel.com/150/150/cats" alt="Some cats image" class="img-rounded">
-<img src="http://lorempixel.com/150/150/cats" alt="Some cats image" class="img-circle">
-<img src="http://lorempixel.com/150/150/cats" alt="Some cats image" class="img-thumbnail">
+<img class="gray" src="http://lorempixel.com/150/150/cats" alt="Some cats image" class="img-edge">
+<img class="gray" src="http://lorempixel.com/150/150/cats" alt="Some cats image" class="img-edge">
 ```
 */
+
+.gray:hover {
+  opacity:0.4;
+}
