@@ -15,8 +15,8 @@ category: Layout - Typography
 */
 
 .title h1 {
-  background: #fff;
-  color: #515151;
+  background: $white;
+  color: $gray-dark;
   display: inline-block;
   font-weight: 600;
   padding: 0 20px;
@@ -34,14 +34,14 @@ category: Layout - Typography
 }
 
 .title {
-  border-bottom: 1px solid #868686;
+  border-bottom: 1px solid $gray;
   height: 33px;
   margin-bottom: 40px;
   width: 100%;
 }
 
-h2 { color: #868686; font-weight: 600; margin-bottom: 40px; }
-h3 { color: #515151; font-weight: 400; margin-bottom: 20px; }
+h2 { color: $gray; font-weight: 600; margin-bottom: 40px; }
+h3 { color: $gray-dark; font-weight: 400; margin-bottom: 20px; }
 
 
 /*doc
@@ -58,7 +58,7 @@ category: Layout - Typography
 ```
 */
 
-p { color: #868686; }
+p { color: $gray; }
 
 
 /*doc
@@ -83,5 +83,5 @@ category: Layout - Typography
 ```
 */
 
-address { color: #868686; }
-address a { color: #ED3324; }
+address { color: $gray; }
+address a { color: $red; }

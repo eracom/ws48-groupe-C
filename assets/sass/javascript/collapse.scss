@@ -57,11 +57,11 @@ category: JavaScript - Collapse
 
 .panel { box-shadow: none; }
 .panel-group .panel { border-radius:0; }
-.panel-default > .panel-heading { background: #868686; border-radius:0; }
+.panel-default > .panel-heading { background: $gray; border-radius:0; }
 .panel-title > a {
   background: url("../img/cross.svg") no-repeat right -21px;
   display: block;
 }
 .panel-title > a.collapsed { background: url("../img/cross.svg") no-repeat right -1px; }
 .panel-title > a:focus { outline: none; }
-.panel-body { color: #868686; }
+.panel-body { color: $gray; }
