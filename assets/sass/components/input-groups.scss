@@ -2,38 +2,6 @@
 
 /*doc
 ---
-title: Input groups
-name: a-input-groups
-category: Components - Input groups
----
-
-```html_example
-<div class="input-group">
-  <span class="input-group-addon">@</span>
-  <input type="text" class="form-control" placeholder="Username">
-</div>
-
-<br>
-
-<div class="input-group">
-  <input type="text" class="form-control">
-  <span class="input-group-addon">.00</span>
-</div>
-
-<br>
-
-<div class="input-group">
-  <span class="input-group-addon">$</span>
-  <input type="text" class="form-control">
-  <span class="input-group-addon">.00</span>
-</div>
-```
-*/
-
-
-
-/*doc
----
 title: Sizes
 name: c-sizes
 category: Components - Input groups
@@ -62,26 +30,6 @@ category: Components - Input groups
 */
 
 
-
-/*doc
----
-title: Checkbox-Radio addon
-name: d-checkbox-addon
-category: Components - Input groups
----
-
-```html_example
-<div class="input-group">
-  <span class="input-group-addon">
-    <input type="checkbox">
-  </span>
-  <input type="text" class="form-control">
-</div>
-```
-*/
-
-
-
 /*doc
 ---
 title: Button addon
@@ -91,36 +39,19 @@ category: Components - Input groups
 
 ```html_example
 <div class="input-group">
+  <input type="text" class="form-control" placeholder="Rechercher">
   <span class="input-group-btn">
-    <button class="btn btn-primary" type="button">Go</button>
+    <button class="btn btn-info" type="button"><img src="../../img/loupe.png"></button>
   </span>
-  <input type="text" class="form-control">
 </div>
 ```
 */
 
+button {
+  width:50px;
+}
 
-
-/*doc
----
-title: Dropdown addon
-name: f-dropdown-addon
-category: Components - Input groups
----
-
-```html_example
-<div class="input-group">
-  <input type="text" class="form-control">
-  <div class="input-group-btn">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-    <ul class="dropdown-menu pull-right">
-      <li><a href="#">Action</a></li>
-      <li><a href="#">Another action</a></li>
-      <li><a href="#">Something else here</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Separated link</a></li>
-    </ul>
-  </div>
-</div>
-```
-*/
+button img {
+  width:17px;
+  height:17px;
+}
