@@ -9,9 +9,22 @@ category: Components - Breadcrumb
 
 ```html_example
 <ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Library</a></li>
-  <li class="active">Data</li>
+  <li><a href="#">FR</a></li>
+  <li><a href="#">EN</a></li>
+  <li><a href="#">ESP</a></li>
 </ol>
 ```
 */
+
+.breadcrumb {
+  background-color:none;
+  font-size:16px;
+}
+
+a {
+  color:$gray;
+}
+
+a:hover {
+  color:$gray-dark;
+}
