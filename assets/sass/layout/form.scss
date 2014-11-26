@@ -13,7 +13,8 @@ category: Layout - Form
 ```
 */
 
-
+.form-control { box-shadow: none; }
+.form-control:focus { border-color:$gray-dark; box-shadow: none; }
 
 /*doc
 ---
@@ -26,7 +27,6 @@ category: Layout - Form
 <textarea class="form-control" rows="3"></textarea>
 ```
 */
-
 
 
 /*doc
@@ -55,17 +55,7 @@ category: Layout - Form
 ---
 
 ```html_example
-<select class="form-control">
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-</select>
-
-<br>
-
-<select multiple class="form-control">
+<select class="selectpicker">
   <option>1</option>
   <option>2</option>
   <option>3</option>
@@ -104,35 +94,6 @@ category: Layout - Form
 
 /*doc
 ---
-title: Inline form
-name: j-inline-form
-category: Layout - Form
----
-
-```html_example
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputPassword2">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Remember me
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Sign in</button>
-</form>
-```
-*/
-
-
-
-/*doc
----
 title: Horizontal form
 name: k-horizontal-form
 category: Layout - Form
@@ -163,7 +124,7 @@ category: Layout - Form
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Sign in</button>
+      <button type="submit" class="btn btn-primary">Sign in</button>
     </div>
   </div>
 </form>
@@ -183,11 +144,6 @@ category: Layout - Form
   <input type="text" class="form-control" id="inputSuccess2">
   <span class="glyphicon glyphicon-ok form-control-feedback"></span>
 </div>
-<div class="form-group has-warning has-feedback">
-  <label class="control-label" for="inputWarning2">Input with warning</label>
-  <input type="text" class="form-control" id="inputWarning2">
-  <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
-</div>
 <div class="form-group has-error has-feedback">
   <label class="control-label" for="inputError2">Input with error</label>
   <input type="text" class="form-control" id="inputError2">
@@ -195,3 +151,17 @@ category: Layout - Form
 </div>
 ```
 */
+
+.has-success .checkbox, .has-success .checkbox-inline, .has-success .control-label, .has-success .help-block, .has-success .radio, .has-success .radio-inline, .has-success.checkbox label, .has-success.checkbox-inline label, .has-success.radio label, .has-success.radio-inline label {
+  color: $green;
+}
+.has-success .form-control { border-color: $green; }
+.has-success .form-control:focus { border-color: $green; box-shadow: none; }
+.has-success .form-control-feedback { color: $green; }
+
+.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
+  color: $red;
+}
+.has-error .form-control { border-color: $red; }
+.has-error .form-control:focus { border-color: $red; box-shadow: none; }
+.has-error .form-control-feedback { color: $red; }
