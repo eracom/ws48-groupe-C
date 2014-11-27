@@ -10,11 +10,81 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="../css/stylesheet.css">
+        <link rel="stylesheet" href="../css/omct.css">
     </head>
     <body>
-        {% block page %}{% endblock %}
+        <div class="header">
+          <div class="header-container">
+            <img src="../img/logo.png" alt="" class="logo">
+            <ol class="breadcrumb">
+              <li><a href="#">FR</a></li>
+              <li><a href="#">EN</a></li>
+              <li><a href="#">ESP</a></li>
+            </ol>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Rechercher">
+              <span class="input-group-btn">
+                <button class="btn btn-info" type="button"><img src="../img/loupe.png"></button>
+              </span>
+            </div>
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#">Accueil</a></li>
+              <li><a href="#">Activité</a></li>
+              <li class="dropdown">
+                <a data-toggle="dropdown" href="#">
+                  CAT <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Participation de la société civile</a></li>
+                  <li><a href="#">Restez informé</a></li>
+                  <li><a href="#">Suivi</a></li>
+                  <li><a href="#">Prochaine session</a></li>
+                  <li><a href="#">E-bulletin</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a data-toggle="dropdown" href="#">
+                  Le réseau OMCT <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">A propos de Réseau</a></li>
+                  <li><a href="#">Afrique</a></li>
+                  <li><a href="#">Amérique</a></li>
+                  <li><a href="#">Asie</a></li>
+                  <li><a href="#">Europe</a></li>
+                  <li><a href="#">Maghreb et Moyen-Orient</a></li>
+                  <li><a href="#">Pacifique</a></li>
+                </ul>
+              </li>
+              <li><a href="#">OMCT Europe</a></li>
+              <li class="dropdown">
+                <a data-toggle="dropdown" href="#">
+                  A propos de l'OMCT <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Historique</a></li>
+                  <li><a href="#">Equipe</a></li>
+                  <li><a href="#">Conseil exécutif</a></li>
+                  <li><a href="#">Assemblée générale</a></li>
+                  <li><a href="#">Prix</a></li>
+                  <li><a href="#">Collaborations (FIFDH)</a></li>
+                  <li><a href="#">Vacancies and Internships</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Contacts</a></li>
+              <li><a id="donner" href="#">Donner</a></li>
+            </ul>
+          </div>
+        </div>
         <script src="../js/vendors.min.js"></script>
+        <script>
+          // (function($){
+          //   $(document).ready(function(){
+          //     $('.dropdown-toggle').dropdown();
+          //   });
+          // }(jQuery));
+        </script>
         <script src="../js/main.min.js"></script>
     </body>
 </html>

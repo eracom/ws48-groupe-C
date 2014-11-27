@@ -148,7 +148,7 @@ gulp.task('clean', del.bind(null, ['build', 'styleguide']));
 /**
  * Serve
  */
-gulp.task('serve', ['styles', 'scripts', 'twig'], function () {
+gulp.task('serve', ['styles', 'scripts', 'twig', 'img'], function () {
   browserSync({
     server: {
       baseDir: ['styleguide'],
@@ -195,4 +195,3 @@ gulp.task('production',['clean'], function() {
 gulp.task('default', ['clean'], function(cb) {
   runSequence('vendors', 'styles', 'scripts', 'img', 'twig', 'styleguide', cb);
 });
-

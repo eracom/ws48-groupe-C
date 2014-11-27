@@ -57,7 +57,7 @@ category: Components - Nav
   text-transform:uppercase;
 }
 
-.nav a {
+.nav > li > a {
   color:$white;
   background-color:$gray-dark;
 }
@@ -72,6 +72,8 @@ category: Components - Nav
   border-left:0;
   border-right:0;
 }
+
+.nav-tabs > li { margin-bottom: -3px; }
 
 .nav-tabs > li > a {
   border-radius:0;
