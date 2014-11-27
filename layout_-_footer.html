@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Components - Input groups</title>
+    <title>Layout - Footer</title>
 
     <!-- Styleguide CSS -->
     <link rel="stylesheet" href="./theme-build/css/vendors.css">
@@ -175,7 +175,7 @@
             
               
               
-                <li><a class="active" href="components_-_input_groups.html">Input groups</a></li>
+                <li><a href="components_-_input_groups.html">Input groups</a></li>
               
             
           
@@ -207,7 +207,7 @@
             
               
               
-                <li><a href="layout_-_footer.html">Footer</a></li>
+                <li><a class="active" href="layout_-_footer.html">Footer</a></li>
               
             
           
@@ -259,7 +259,7 @@
 
     <header class="cortana-header sb-slide">
       
-        <h1>Input groups</h1>
+        <h1>Footer</h1>
       
       <div id="open-left" class="cortana-menu-btn">
         <span></span>
@@ -279,11 +279,7 @@
           <ul bs-scrollspy-list data-offset="-30">
             
               
-                <li><a href="#c-sizes">Sizes</a></li>
-              
-            
-              
-                <li><a href="#e-button-addon">Button addon</a></li>
+                <li><a href="#a-footer">Footer</a></li>
               
             
           </ul>
@@ -294,57 +290,81 @@
 
 
 
-<h1 id="c-sizes">Sizes</h1>
-</div><div class="codeExample"><div class="exampleOutput"><div class="input-group input-group-lg">
-  <span class="input-group-addon">@</span>
-  <input type="text" class="form-control" placeholder="Username">
-</div>
+<h1 id="a-footer">Footer</h1>
+</div><div class="codeExample"><div class="exampleOutput"><footer>
+  <div class="footer-container clearfix">
 
-<br>
+    <div class="bloc1">
+    <h2>Contact</h2>
+    <address>
+      <p><strong>Twitter, Inc.</strong></p><br>
+      795 Folsom Ave, Suite 600<br>
+      San Francisco, CA 94107<br>
+      <p>USA</p>
 
-<div class="input-group">
-  <span class="input-group-addon">@</span>
-  <input type="text" class="form-control" placeholder="Username">
-</div>
+      Tel: +41 22 809 4939<br>
+      Fax: +41 22 809 4929<br>
+      <a href="mailto:#">first.last@example.com</a>
+    </address>
 
-<br>
+    <address>
+    <p><strong>Twitter, Inc.</strong></p><br>
+    795 Folsom Ave, Suite 600<br>
+    San Francisco, CA 94107<br>
+    <p>USA</p>
 
-<div class="input-group input-group-sm">
-  <span class="input-group-addon">@</span>
-  <input type="text" class="form-control" placeholder="Username">
-</div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group input-group-lg"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"input-group-addon"</span><span class="nt">&gt;</span>@<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Username"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+    Tel: +41 22 809 4939<br>
+    Fax: +41 22 809 4929<br>
+    <a href="mailto:#">first.last@example.com</a>
+    </address>
+    </div>
 
-<span class="nt">&lt;br&gt;</span>
+    <div class="bloc2">
+    <h2>Social</h2>
+    <div class="social">
+      <img src="../img/sociaux.svg" alt="sociaux">
+    </div>
+    </div>
 
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"input-group-addon"</span><span class="nt">&gt;</span>@<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Username"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+  </div>
+</footer>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;footer&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-container clearfix"</span><span class="nt">&gt;</span>
 
-<span class="nt">&lt;br&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bloc1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Contact<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;address&gt;</span>
+      <span class="nt">&lt;p&gt;&lt;strong&gt;</span>Twitter, Inc.<span class="nt">&lt;/strong&gt;&lt;/p&gt;&lt;br&gt;</span>
+      795 Folsom Ave, Suite 600<span class="nt">&lt;br&gt;</span>
+      San Francisco, CA 94107<span class="nt">&lt;br&gt;</span>
+      <span class="nt">&lt;p&gt;</span>USA<span class="nt">&lt;/p&gt;</span>
 
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group input-group-sm"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"input-group-addon"</span><span class="nt">&gt;</span>@<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Username"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div><div class="cortana-content">
-<h1 id="e-button-addon">Button addon</h1>
-</div><div class="codeExample"><div class="exampleOutput"><div class="input-group">
-  <input type="text" class="form-control" placeholder="Rechercher">
-  <span class="input-group-btn">
-    <button class="btn btn-info" type="button"><img src="../../img/loupe.png"></button>
-  </span>
-</div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Rechercher"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"input-group-btn"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-info"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">"../../img/loupe.png"</span><span class="nt">&gt;&lt;/button&gt;</span>
-  <span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+      Tel: +41 22 809 4939<span class="nt">&lt;br&gt;</span>
+      Fax: +41 22 809 4929<span class="nt">&lt;br&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"mailto:#"</span><span class="nt">&gt;</span>first.last@example.com<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/address&gt;</span>
+
+    <span class="nt">&lt;address&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;strong&gt;</span>Twitter, Inc.<span class="nt">&lt;/strong&gt;&lt;/p&gt;&lt;br&gt;</span>
+    795 Folsom Ave, Suite 600<span class="nt">&lt;br&gt;</span>
+    San Francisco, CA 94107<span class="nt">&lt;br&gt;</span>
+    <span class="nt">&lt;p&gt;</span>USA<span class="nt">&lt;/p&gt;</span>
+
+    Tel: +41 22 809 4939<span class="nt">&lt;br&gt;</span>
+    Fax: +41 22 809 4929<span class="nt">&lt;br&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"mailto:#"</span><span class="nt">&gt;</span>first.last@example.com<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/address&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bloc2"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Social<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"social"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"../img/sociaux.svg"</span> <span class="na">alt=</span><span class="s">"sociaux"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/footer&gt;</span>
 </pre></div></div></div><div class="cortana-content">
         </div>
       </div>
