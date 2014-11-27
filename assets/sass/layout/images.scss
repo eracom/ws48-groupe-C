@@ -22,7 +22,7 @@ category: Layout - Images
 
 ```html_example
 <figure>
-<iframe width="350" height="200" src="//www.youtube.com/embed/wlCtqCIVL-4" frameborder="0" allowfullscreen></iframe>
+<iframe width="380" height="240" src="//www.youtube.com/embed/wlCtqCIVL-4" frameborder="0" allowfullscreen></iframe>
 <figcaption>Titre : Lorem ipsum dolor sit amet, consectetur.</figcaption>
 </figure>
 ```
@@ -31,22 +31,4 @@ category: Layout - Images
 figcaption {
   color:$gray;
   padding-top:10px;
-}
-
-
-/*doc
----
-title: Image shape gallery
-name: c-images-shape
-category: Layout - Images
----
-
-```html_example
-<img class="gray" src="http://lorempixel.com/150/150/cats" alt="Some cats image" class="img-edge">
-<img class="gray" src="http://lorempixel.com/150/150/cats" alt="Some cats image" class="img-edge">
-```
-*/
-
-.gray:hover {
-  opacity:0.4;
 }

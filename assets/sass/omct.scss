@@ -66,3 +66,15 @@
 .pub img { margin-bottom: 30px; }
 
 .block { height: 280px; margin-bottom:60px; }
+
+figure {
+  float:left;
+  margin-left:50px;
+  margin-bottom: 50px;
+}
+
+.activedon {
+  color:$green !important;
+  border-top:2px solid $green !important;
+  background:$white !important;
+}

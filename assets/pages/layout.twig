@@ -28,8 +28,8 @@
               </span>
             </div>
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#">Accueil</a></li>
-              <li><a href="#">Activité</a></li>
+              <li{% block accueilactive %}{% endblock %}><a href="index.html">Accueil</a></li>
+              <li{% block activiteactive %}{% endblock %}><a href="activites.html">Activités</a></li>
               <li class="dropdown">
                 <a data-toggle="dropdown" href="#">
                   CAT <span class="caret"></span>
@@ -57,7 +57,7 @@
                   <li><a href="#">Pacifique</a></li>
                 </ul>
               </li>
-              <li><a href="#">OMCT Europe</a></li>
+              <li{% block multimediaactive %}{% endblock %}><a href="multimedia.html">Multimédia</a></li>
               <li class="dropdown">
                 <a data-toggle="dropdown" href="#">
                   A propos de l'OMCT <span class="caret"></span>
@@ -73,7 +73,7 @@
                 </ul>
               </li>
               <li><a href="#">Contacts</a></li>
-              <li><a id="donner" href="#">Donner</a></li>
+              <li><a{% block donneractive %}{% endblock %} id="donner" href="don.html">Donner</a></li>
             </ul>
           </div>
         </div>
