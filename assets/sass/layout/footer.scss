@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+/*doc
+---
+title: Footer
+name: a-footer
+category: Layout - Footer
+---
+
+```html_example
+<footer>
+  <div class="footer-container">
+    <h2>Contact</h2>
+    <address>
+      <p><strong>Twitter, Inc.</strong></p><br>
+      795 Folsom Ave, Suite 600<br>
+      San Francisco, CA 94107<br>
+      <p>USA</p>
+
+      Tel: +41 22 809 4939<br>
+      Fax: +41 22 809 4929<br>
+      <a href="mailto:#">first.last@example.com</a>
+    </address>
+
+    <address>
+    <p><strong>Twitter, Inc.</strong></p><br>
+    795 Folsom Ave, Suite 600<br>
+    San Francisco, CA 94107<br>
+    <p>USA</p>
+
+    Tel: +41 22 809 4939<br>
+    Fax: +41 22 809 4929<br>
+    <a href="mailto:#">first.last@example.com</a>
+    </address>
+
+    <div class="social">
+    <h2>Social</h2>
+      <img src="../img/sociaux.svg" alt="sociaux">
+    </div>
+  </div>
+</footer>
+```
+*/
+
+footer {
+  background:$gray-light;
+  height:auto;
+  padding: 30px 0;
+  width:100%;
+  color:$gray;
+}
+
+
+.footer-container {
+  width:920px;
+  margin:0 auto;
+  height:auto;
+  display: inline-block;
+}
+
+.footer-container address {
+  float:left;
+  margin-left:30px;
+}
+
+.social {
+  float:right;
+  margin:auto;
+}

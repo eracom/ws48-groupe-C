@@ -70,14 +70,13 @@ category: Layout - Typography
 
 ```html_example
 <address>
-  <strong>Twitter, Inc.</strong><br>
+  <p><strong>Twitter, Inc.</strong></p><br>
   795 Folsom Ave, Suite 600<br>
   San Francisco, CA 94107<br>
-  <abbr title="Phone">P:</abbr> (123) 456-7890
-</address>
+  <p>USA</p>
 
-<address>
-  <strong>Full Name</strong><br>
+  Tel: +41 22 809 4939<br>
+  Fax: +41 22 809 4929<br>
   <a href="mailto:#">first.last@example.com</a>
 </address>
 ```
