@@ -10,6 +10,8 @@ category: Layout - Footer
 ```html_example
 <footer>
   <div class="footer-container">
+
+    <div class="bloc1">
     <h2>Contact</h2>
     <address>
       <p><strong>Twitter, Inc.</strong></p><br>
@@ -32,11 +34,15 @@ category: Layout - Footer
     Fax: +41 22 809 4929<br>
     <a href="mailto:#">first.last@example.com</a>
     </address>
+    </div>
 
-    <div class="social">
+    <div class="bloc2">
     <h2>Social</h2>
+    <div class="social">
       <img src="../img/sociaux.svg" alt="sociaux">
     </div>
+    </div>
+
   </div>
 </footer>
 ```
@@ -58,12 +64,18 @@ footer {
   display: inline-block;
 }
 
-.footer-container address {
-  float:left;
-  margin-left:30px;
+address {
+  display:inline-block;
+  margin-right: 60px;
 }
 
-.social {
-  float:right;
+.bloc1 {
+  float:left;
+  margin-left:30px;
+  margin-right:40px;
+}
+
+.bloc2 {
+  float:left;
   margin:auto;
 }
