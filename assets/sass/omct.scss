@@ -51,6 +51,15 @@
 
 // STYLES PAGES -------------------------
 
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+}
+
 .content { margin: 0 auto; width: 920px; }
+.content .title { clear: both; margin-top: 20px; }
+.content .btn { float: right; margin-bottom: 30px; }
 
 .pub img { margin-bottom: 30px; }
