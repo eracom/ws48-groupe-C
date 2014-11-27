@@ -51,6 +51,8 @@ category: Components - Input groups
   width:50px;
 }
 
+.input-group .form-control { border: none; }
+
 .input-group button img {
   width:17px;
   height:17px;

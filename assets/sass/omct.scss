@@ -67,6 +67,8 @@
 
 .block { height: 280px; margin-bottom:60px; }
 
+.block:last-child { margin-bottom: 80px; }
+
 figure {
   float:left;
   margin-left:50px;
