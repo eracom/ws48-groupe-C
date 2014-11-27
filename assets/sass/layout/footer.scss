@@ -9,7 +9,7 @@ category: Layout - Footer
 
 ```html_example
 <footer>
-  <div class="footer-container">
+  <div class="footer-container clearfix">
 
     <div class="bloc1">
     <h2>Contact</h2>
@@ -63,7 +63,7 @@ footer {
   height:auto;
 }
 
-address {
+footer address {
   display:inline-block;
   margin-right: 60px;
 }

@@ -1,0 +1,153 @@
+{% extends "layout.twig" %}
+
+{% block pagetitle %}Don{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+  <div class="col-md-8">
+    <div class="title">
+      <h1>Faire une donation en ligne</h1>
+    </div>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="selectTitre" class="col-sm-3 control-label">Titre</label>
+          <div class="col-sm-9">
+            <select class="selectpicker" id="selectTitre">
+              <option>Monsieur</option>
+              <option>Madame</option>
+              <option>Mademoiselle</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputname1" class="col-sm-3 control-label">Prénom</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputname1" placeholder="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputname2" class="col-sm-3 control-label">Nom</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputname2" placeholder="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputstreet" class="col-sm-3 control-label">Rue</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputstreet" placeholder="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputpostalcode" class="col-sm-3 control-label">Code postal et Ville</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="inputpostalcode" placeholder="">
+          </div>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="inputctity" placeholder="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputphone" class="col-sm-3 control-label">Téléphone</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputphone" placeholder="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+          <div class="col-sm-9">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputcard" class="col-sm-3 control-label">Code</label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="inputcard1" placeholder="">
+          </div>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="inputcard2" placeholder="">
+          </div>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="inputcard3" placeholder="">
+          </div>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="inputcard4" placeholder="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="selectmonth" class="col-sm-3 control-label">Date d'expiration</label>
+          <div class="col-sm-3">
+            <select class="selectpicker" id="selectmonth">
+              <option>01 (Jan.)</option>
+              <option>02 (Feb.)</option>
+              <option>03 (March)</option>
+              <option>04 (April)</option>
+              <option>05 (May)</option>
+              <option>06 (June)</option>
+              <option>07 (July)</option>
+              <option>08 (Aug.)</option>
+              <option>09 (Sept.)</option>
+              <option>10 (Oct.)</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <select class="selectpicker" id="selectyear">
+              <option>2014</option>
+              <option>2015</option>
+              <option>2016</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputcod" class="col-sm-3 control-label">Code de vérification</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputcod" placeholder="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputcod" class="col-sm-3 control-label">Montant (en CHF)</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputcod" placeholder="">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Je n'ai pas besoin d'une
+                attestation de don
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="textarea" class="col-sm-3 control-label">Commentaire</label>
+          <div class="col-sm-9">
+            <textarea class="form-control" rows="3" id="textarea"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> J'ai lu et approuvé les conditions générales de donations de OMCT
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+            <button type="submit" class="btn btn-default">Annuler</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  <div class="col-md-4 clearfix">
+    <div class="title">
+      <h1>Cordonnées</h1>
+    </div>
+
+    </div>
+
+  </div>
+{% endblock %}
